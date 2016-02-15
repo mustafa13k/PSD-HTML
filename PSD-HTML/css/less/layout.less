@@ -1,0 +1,325 @@
+/***************************************************************************************************/
+	/* GENERAL */
+/***************************************************************************************************/
+
+ .section-content{
+	padding: 3em 0;
+} 
+
+
+
+p {
+	a{
+		text-decoration: none;
+		color: @primary;
+
+		&:hover{
+			color:@dark-bg-text;
+			border-bottom: 1px dotted @dark-bg-text; 
+			text-decoration: none;
+		}
+	
+	}
+}
+/***************************************************************************************************/
+	/* HEADER */
+/***************************************************************************************************/
+
+.main-header{
+	//transparent,url,back-position,repeat -- back-position:0 0 to start from the top left positon of container
+	background: transparent url("../images/color-stripe-(1).png") 0 0 repeat-x; //STRIPE
+	
+	//back-size:50% 4px for repeating pattern along x-axis twice and setting 4px height as that of original stripe image
+	background-size: 50% 4px;
+}
+
+.main-nav{
+	margin-top: 3em; //48px
+	
+	ul{
+		li{
+			text-transform: uppercase;
+
+			a{
+				text-decoration: none;
+				color: @light-text;
+				font-size: 16px;
+
+				.transition();
+				&:hover{
+					color: @primary;
+				}
+			}
+		}
+	}
+}
+
+/* PORTFOLIO HEADER  */
+.main-content-header{
+	margin: 24px 0 24px 0;
+
+	.btn{
+		margin-top: 0;
+	}
+}
+
+hr.no-margin-def{
+	height: 1px;
+	margin-top: 0;
+}
+
+
+
+
+/***************************************************************************************************/
+	/* MIDDLE CONTENT */
+/***************************************************************************************************/
+
+.middle-container{
+	background: #222 url("../images/pattern-(1).png") 0 0 repeat;
+	.inner-shadow();
+
+	ul{
+		&.row{
+			//margin: 0;
+		}
+	}
+}
+
+ul.row{
+	margin-bottom: 1.5em;
+}
+
+.intro-content{
+	background-color: @dark-bg;
+	color:#fff;
+	height:209px;
+	padding: 3em;
+
+	h1{
+		padding-top: 20px;
+		
+		&.intro-1{
+			font-weight: bold;
+			padding-top: 30px;
+		}
+
+		&.intro-2{
+			color:@intro-color-1;
+		}
+		&.intro-3{
+			color:@intro-color-2;
+		}
+	}
+} 
+
+.portfolio-entry{
+	position: relative;
+	
+	.hover-state{
+		position: absolute;
+		top:74px;
+		left: 130px;
+		display: none;
+		p{
+			position: relative;	
+			
+			// For icon from icomoon 
+			&:before{
+				content:'\21';
+				font-family: 'icomoon-ultimate';
+				font-size:11px;
+				top:2px;
+				right:-24px;
+				position: absolute;
+				color: @primary;
+
+			}
+		}
+		em{
+			font-size: 14px;
+			color:@light-text;
+		}
+		
+	}
+
+	figure img{
+		.transition(opacity,.2s);
+	}
+	
+	&:hover figure img{
+		opacity: 0;
+		filter:alpha(opacity=0);
+	}
+
+	&:hover .hover-state{
+		display: block;
+	}
+}
+
+/* PORTFOLIO NAVIGATION */
+
+.portfolio-nav{
+	margin-top: 48px;
+	.inner-shadow();
+
+	ul{
+		padding: 0 0 24px 0;
+	}
+}
+
+/* PORTFOLIO SINGLE CONTENT */
+
+.portfolio-image-list{
+	li{
+		margin-bottom: 24px;
+		.drop-shadow();
+		figcaption{
+			background-color: lighten(@dark-bg,10%);
+			color:#fff;
+			text-align: center;
+			font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+			font-weight: 300;
+			margin-top: 3px;
+			padding: 24px 0 24px 0;
+			font-size: 16px;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		img{
+			padding-bottom: 3px;
+			border-bottom: 2px dotted @border;
+		}
+
+	}
+
+}
+
+/* PORTFOLIO SINGLE SIDEBAR*/
+
+aside.sidebar{
+	padding: 48px 24px;
+	.drop-shadow();
+
+	p{
+		margin: 24px 0 24px ;
+		font-weight: 300;
+		font-weight: 16px;
+	}
+
+	blockquote{
+		
+		p{
+			font-style: italic;
+			color:@light-text;
+
+			&:before,
+			 &:after{
+			  	content:'"';
+		  	}
+		}
+
+		cite{
+			font-style: normal;
+		}
+	}
+
+	h3{
+		font-size: 16px;
+	}
+
+	ul{
+		margin-top: 24px;
+	}
+}
+
+/* ABOUT PAGE CONTENT */
+
+.margin-about{
+	margin-bottom: 48px;
+}
+.about-page,
+.contact-page{
+	h3{
+		font-size: 18px;
+	}
+
+	hr.alt{
+		margin:48px auto;
+	}
+
+	h2.available{
+		color:#a6c63a;
+		font-size: 18px;
+	}
+}
+
+/* CONTACT PAGE */
+
+.contact-page{
+	h3{
+		text-transform: uppercase;
+	}
+}
+
+
+/***************************************************************************************************/
+	/* QUOTE AREA */
+/***************************************************************************************************/
+
+.quote-area{
+	background-color: @dark-bg;
+	color:@dark-bg-text;
+	
+	h3{
+		color:#fff;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	p{
+		.narrow-p();
+		
+		&:last-child{
+			margin:0 auto;
+		}
+	}
+
+}
+
+/***************************************************************************************************/
+	/* FOOTER */
+/***************************************************************************************************/
+
+.main-footer,{
+	color:@regular-text;
+
+	h3{
+		font-weight: normal;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+	p{
+		.narrow-p();
+	}
+}
+
+.social-icons{
+	li{
+		//height: 32px;
+	}
+	a{
+		font-size: 32px;
+		display: block;
+		color: @border;
+		
+		.transition(color,.4s);
+
+		&:hover{
+			text-decoration: none;
+			color: @regular-text;
+		}
+	}
+	
+}
